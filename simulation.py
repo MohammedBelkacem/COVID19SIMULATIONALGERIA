@@ -2,8 +2,8 @@ start_number=141 # nombre de personnes atteinte au départ
 mortality_rate=4 # taux de mortalité
 day=1 #intervalle
 speed=1.5 #vitesse de propagation par jour
-reached_population=20000000 # population cible.
-number=start_number
+reached_population=20000000 # population cible atteinte max.
+number=start_number#nombre de personnes atteinte dans le temps
 mortality=mortality_rate*number/100
 tab_mortality=[]
 tab_number=[]
@@ -14,7 +14,7 @@ tab_day.append(day)
 tot_mort=start_number/mortality_rate
 while number<reached_population:
     day=day+1
-    number=number*speed
+    number=number*speed+number
     mortality=mortality_rate*number/100
     tab_mortality.append(mortality)
     tab_number.append(number)
