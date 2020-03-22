@@ -31,16 +31,13 @@ import numpy as np
 
 
 labels = tab_day
-#men_means = tab_mortality
 women_means = tab_number
 x = np.arange(len(labels))  # the label locations
 width = 0.35  # the width of the bars
 
 fig, ax = plt.subplots()
-#rects1 = ax.bar(x - width/2, men_means, width, label='Morts')
 rects2 = ax.bar(x + width/2, women_means, width, label='Confirmés')
 
-# Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_ylabel('Scores')
 ax.set_title('Evolution du nombre de personnes atteinte en Algérie')
 ax.set_xticks(x)
@@ -59,7 +56,6 @@ def autolabel(rects):
                     ha='center', va='bottom')
 
 
-#autolabel(rects1)
 autolabel(rects2)
 
 fig.tight_layout()
@@ -68,15 +64,11 @@ plt.show()
 ######
 labels = tab_day
 men_means = tab_mortality
-#women_means = tab_number
 x = np.arange(len(labels))  # the label locations
 width = 0.35  # the width of the bars
 
 fig, ax = plt.subplots()
 rects1 = ax.bar(x - width/2, men_means, width, label='Morts')
-#rects2 = ax.bar(x + width/2, women_means, width, label='Confirmés')
-
-# Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_ylabel('Scores')
 ax.set_title('Evolution du nombre de morts en Algérie')
 ax.set_xticks(x)
@@ -96,7 +88,6 @@ def autolabel(rects):
 
 
 autolabel(rects1)
-#autolabel(rects2)
 
 fig.tight_layout()
 
