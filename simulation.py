@@ -1,8 +1,9 @@
+global_population=40000000 #population globale
 start_number=141 # nombre de personnes atteinte au départ
 mortality_rate=4 # taux de mortalité
 day=1 #intervalle
 speed=1.5 #vitesse de propagation par jour
-reached_population=20000000 # population cible atteinte max.
+reached_population=int(global_population/3) # max population cible atteinte.
 number=start_number#nombre de personnes atteinte dans le temps
 mortality=mortality_rate*number/100
 tab_mortality=[]
