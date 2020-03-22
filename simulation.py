@@ -1,7 +1,7 @@
 start_number=141 # nombre de personnes atteinte au départ
-mortality_rate=10 # taux de mortalité
+mortality_rate=4 # taux de mortalité
 day=1 #intervalle
-speed=2 #vitesse de propagation par jour
+speed=1.5 #vitesse de propagation par jour
 reached_population=20000000 # population cible.
 number=start_number
 mortality=mortality_rate*number/100
@@ -11,7 +11,7 @@ tab_day=[]
 tab_mortality.append(mortality)
 tab_number.append(number)
 tab_day.append(day)
-tot_mort=start_number
+tot_mort=start_number/mortality_rate
 while number<reached_population:
     day=day+1
     number=number*speed
@@ -22,8 +22,8 @@ while number<reached_population:
     number=number-mortality
     tot_mort=tot_mort+mortality
 
-print(day)
-print(tot_mort)
+print("le PIC dans ",day," jours")
+print("Nombre total de morts  ", int(tot_mort))
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -38,6 +38,7 @@ width = 0.35  # the width of the bars
 fig, ax = plt.subplots()
 rects2 = ax.bar(x + width/2, women_means, width, label='Confirmés')
 
+# Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_ylabel('Scores')
 ax.set_title('Evolution du nombre de personnes atteinte en Algérie')
 ax.set_xticks(x)
@@ -69,6 +70,8 @@ width = 0.35  # the width of the bars
 
 fig, ax = plt.subplots()
 rects1 = ax.bar(x - width/2, men_means, width, label='Morts')
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_ylabel('Scores')
 ax.set_title('Evolution du nombre de morts en Algérie')
 ax.set_xticks(x)
